@@ -1,0 +1,54 @@
+services:
+  frontend:
+    build:
+      context: ../packages/frontend
+      dockerfile: Dockerfile
+    container_name: fs-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../packages/frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_GRAPHQL_URL=http://localhost:4000/graphql
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    command: yarn dev
+
+  backend:
+    build:
+      context: ../packages/backend
+      dockerfile: Dockerfile
+    container_name: fs-backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - ../packages/backend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URI=mongodb://mongo:27017/fs-technical-test
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+    command: yarn dev
+
+  mongo:
+    image: mongo:latest
+    container_name: fs-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
