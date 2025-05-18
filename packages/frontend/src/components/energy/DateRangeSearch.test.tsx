@@ -30,8 +30,8 @@ describe("DateRangeSearch", () => {
     const startDateInput = screen.getByLabelText("Fecha de inicio:");
     const endDateInput = screen.getByLabelText("Fecha de fin:");
 
-    fireEvent.change(startDateInput, { target: { value: "2023-01-01" } });
-    fireEvent.change(endDateInput, { target: { value: "2023-01-31" } });
+    fireEvent.change(startDateInput, { target: { value: "2025-01-01" } });
+    fireEvent.change(endDateInput, { target: { value: "2025-01-31" } });
 
     // Enviar el formulario
     const button = screen.getByRole("button", { name: "Buscar" });
@@ -39,7 +39,7 @@ describe("DateRangeSearch", () => {
     fireEvent.click(button);
 
     // Verificar que onSearch fue llamado con los valores correctos
-    expect(onSearchMock).toHaveBeenCalledWith("2023-01-01", "2023-01-31");
+    expect(onSearchMock).toHaveBeenCalledWith("2025-01-01", "2025-01-31");
   });
 
   it('muestra "Buscando..." cuando isLoading es true', () => {
@@ -98,12 +98,12 @@ describe("DateRangeSearch", () => {
     const startDateInput = screen.getByLabelText("Fecha de inicio:");
     const endDateInput = screen.getByLabelText("Fecha de fin:");
 
-    fireEvent.change(startDateInput, { target: { value: "2023-01-01" } });
-    fireEvent.change(endDateInput, { target: { value: "2023-01-31" } });
+    fireEvent.change(startDateInput, { target: { value: "2025-01-01" } });
+    fireEvent.change(endDateInput, { target: { value: "2025-01-31" } });
 
     // Verificar que los campos tienen valores
-    expect(startDateInput).toHaveValue("2023-01-01");
-    expect(endDateInput).toHaveValue("2023-01-31");
+    expect(startDateInput).toHaveValue("2025-01-01");
+    expect(endDateInput).toHaveValue("2025-01-31");
 
     // Hacer clic en el botón de limpiar
     const clearButton = screen.getByRole("button", { name: "Limpiar Rango" });

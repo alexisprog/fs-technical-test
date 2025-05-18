@@ -10,7 +10,7 @@ describe("helpers", () => {
         type: "group",
         attributes: {
           title: "Grupo principal",
-          lastUpdate: "2023-01-01",
+          lastUpdate: "2025-01-01",
           content: [
             {
               id: "sg1",
@@ -37,7 +37,7 @@ describe("helpers", () => {
         type: "group",
         attributes: {
           title: "No es grupo principal",
-          lastUpdate: "2023-01-01",
+          lastUpdate: "2025-01-01",
         },
       };
 
@@ -50,7 +50,7 @@ describe("helpers", () => {
         type: "group",
         attributes: {
           title: "No es grupo principal",
-          lastUpdate: "2023-01-01",
+          lastUpdate: "2025-01-01",
           // @ts-ignore - Probando caso donde content no es un array
           content: "no es un array",
         },
@@ -65,7 +65,7 @@ describe("helpers", () => {
         type: "group",
         attributes: {
           title: "Grupo con content vacío",
-          lastUpdate: "2023-01-01",
+          lastUpdate: "2025-01-01",
           content: [],
         },
       };

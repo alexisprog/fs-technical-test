@@ -13,7 +13,7 @@ describe("dataProcessor", () => {
           attributes: {
             title: "Generación",
             description: "Fuentes de generación de energía",
-            lastUpdate: "2023-01-01",
+            lastUpdate: "2025-01-01",
             content: [
               {
                 id: "total1",
@@ -25,7 +25,7 @@ describe("dataProcessor", () => {
                   total: 1500,
                   totalPercentage: 100,
                   values: [
-                    { datetime: "2023-01-01", value: 1500, percentage: 100 },
+                    { datetime: "2025-01-01", value: 1500, percentage: 100 },
                   ],
                   // @ts-ignore - La propiedad composite es usada por las funciones de la aplicación
                   composite: true,
@@ -41,7 +41,7 @@ describe("dataProcessor", () => {
                   total: 800,
                   totalPercentage: 53.3,
                   values: [
-                    { datetime: "2023-01-01", value: 800, percentage: 53.3 },
+                    { datetime: "2025-01-01", value: 800, percentage: 53.3 },
                   ],
                 },
               },
@@ -55,7 +55,7 @@ describe("dataProcessor", () => {
                   total: 700,
                   totalPercentage: 46.7,
                   values: [
-                    { datetime: "2023-01-01", value: 700, percentage: 46.7 },
+                    { datetime: "2025-01-01", value: 700, percentage: 46.7 },
                   ],
                 },
               },
@@ -68,7 +68,7 @@ describe("dataProcessor", () => {
           attributes: {
             title: "Consumo",
             description: "Consumo de energía",
-            lastUpdate: "2023-01-01",
+            lastUpdate: "2025-01-01",
             content: [
               {
                 id: "total2",
@@ -80,7 +80,7 @@ describe("dataProcessor", () => {
                   total: -800,
                   totalPercentage: 100,
                   values: [
-                    { datetime: "2023-01-01", value: -800, percentage: 100 },
+                    { datetime: "2025-01-01", value: -800, percentage: 100 },
                   ],
                   // @ts-ignore - La propiedad composite es usada por las funciones de la aplicación
                   composite: true,
@@ -96,7 +96,7 @@ describe("dataProcessor", () => {
                   total: -500,
                   totalPercentage: 62.5,
                   values: [
-                    { datetime: "2023-01-01", value: -500, percentage: 62.5 },
+                    { datetime: "2025-01-01", value: -500, percentage: 62.5 },
                   ],
                 },
               },
@@ -110,7 +110,7 @@ describe("dataProcessor", () => {
                   total: -300,
                   totalPercentage: 37.5,
                   values: [
-                    { datetime: "2023-01-01", value: -300, percentage: 37.5 },
+                    { datetime: "2025-01-01", value: -300, percentage: 37.5 },
                   ],
                 },
               },
@@ -202,7 +202,7 @@ describe("dataProcessor", () => {
           attributes: {
             title: "Grupo Vacío",
             description: "Sin subgrupos",
-            lastUpdate: "2023-01-01",
+            lastUpdate: "2025-01-01",
             content: [],
           },
         },

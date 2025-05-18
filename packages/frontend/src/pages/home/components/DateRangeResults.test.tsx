@@ -12,7 +12,7 @@ describe("DateRangeResults", () => {
         attributes: {
           title: "Balance Energético por Rango",
           description: "Datos del periodo seleccionado",
-          lastUpdate: "2023-07-15",
+          lastUpdate: "2025-07-15",
         },
         meta: {
           cacheControl: {
@@ -26,7 +26,7 @@ describe("DateRangeResults", () => {
           type: "chart_data",
           attributes: {
             title: "Datos de Producción",
-            lastUpdate: "2023-07-15",
+            lastUpdate: "2025-07-15",
             content: [
               {
                 id: "3",
@@ -39,7 +39,7 @@ describe("DateRangeResults", () => {
                   totalPercentage: 65,
                   values: [
                     {
-                      datetime: "2023-07-01",
+                      datetime: "2025-07-01",
                       value: 800,
                       percentage: 65,
                     },
@@ -93,7 +93,7 @@ describe("DateRangeResults", () => {
       screen.getByText("Datos del periodo seleccionado", { exact: false })
     ).toBeInTheDocument();
     expect(
-      screen.getByText("2023-07-15", { exact: false })
+      screen.getByText("2025-07-15", { exact: false })
     ).toBeInTheDocument();
   });
 });

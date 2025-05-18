@@ -14,7 +14,7 @@ describe("LatestEnergyBalance", () => {
         attributes: {
           title: "Balance Energético Mensual",
           description: "Descripción del balance energético",
-          lastUpdate: "2023-06-15",
+          lastUpdate: "2025-06-15",
         },
         meta: {
           cacheControl: {
@@ -28,7 +28,7 @@ describe("LatestEnergyBalance", () => {
           type: "chart_data",
           attributes: {
             title: "Datos de Consumo",
-            lastUpdate: "2023-06-15",
+            lastUpdate: "2025-06-15",
             content: [
               {
                 id: "3",
@@ -41,7 +41,7 @@ describe("LatestEnergyBalance", () => {
                   totalPercentage: 45,
                   values: [
                     {
-                      datetime: "2023-06-01",
+                      datetime: "2025-06-01",
                       value: 500,
                       percentage: 45,
                     },
@@ -115,7 +115,7 @@ describe("LatestEnergyBalance", () => {
       screen.getByText("Descripción del balance energético", { exact: false })
     ).toBeInTheDocument();
     expect(
-      screen.getByText("2023-06-15", { exact: false })
+      screen.getByText("2025-06-15", { exact: false })
     ).toBeInTheDocument();
   });
 
