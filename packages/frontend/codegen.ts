@@ -1,8 +1,14 @@
-import { CodegenConfig } from "@graphql-codegen/cli";
+import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
-  schema: "../backend/src/schema.gql", // Ruta al esquema GraphQL del backend
-  documents: ["src/**/*.tsx", "src/**/*.ts"], // Archivos donde escribiremos nuestras operaciones GraphQL
+  schema: "../backend/src/schema.gql",
+  documents: [
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "!./src/gql/",
+    "!src/**/*.test.tsx",
+    "!src/**/*.test.ts",
+  ],
   ignoreNoDocuments: true,
   generates: {
     "./src/gql/": {

@@ -125,30 +125,50 @@
 .energy-chart .tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-1);
+  gap: var(--spacing-4);
   border-bottom: 2px solid var(--color-gray-200);
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+  padding: var(--spacing-3) var(--spacing-1) var(--spacing-3) var(--spacing-1);
+  overflow-x: auto;
 }
 
 .energy-chart .tab {
-  padding: var(--spacing-2) var(--spacing-4);
-  background: transparent;
+  padding: var(--spacing-4) var(--spacing-6);
+  background-color: var(--color-gray-100);
   border: none;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
   cursor: pointer;
-  font-weight: 500;
-  color: var(--color-gray-600);
-  transition: all var(--transition-fast);
+  font-weight: 600;
+  color: var(--color-gray-700);
+  transition: all 0.2s ease;
+  position: relative;
+  margin-right: var(--spacing-2);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+  min-width: 120px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .energy-chart .tab:hover {
-  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  color: white;
+  transform: translateY(-3px);
 }
 
 .energy-chart .tab.active {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.energy-chart .tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
 }
 
 .energy-chart .tab-content {
@@ -204,4 +224,36 @@
 .energy-chart .empty-state p {
   max-width: 80%;
   margin: 0 auto;
+}
+
+.energy-chart .color-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-4);
+  padding: var(--spacing-2);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+}
+
+.energy-chart .color-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-700);
+}
+
+.energy-chart .color-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.energy-chart .color-box.positive {
+  background-color: var(--color-primary);
+}
+
+.energy-chart .color-box.negative {
+  background-color: var(--color-danger);
 }
