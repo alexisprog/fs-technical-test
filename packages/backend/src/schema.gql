@@ -1,0 +1,98 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Attributes2Type {
+  content: [ContentType!]!
+  description: String
+  lastUpdate: String!
+  magnitude: JSON
+  title: String!
+}
+
+type Attributes3Type {
+  color: String!
+  composite: Boolean!
+  description: String
+  icon: JSON
+  lastUpdate: String!
+  magnitude: JSON
+  title: String!
+  total: Float!
+  totalPercentage: Float!
+  type: String
+  values: [ValueType!]!
+}
+
+type AttributesType {
+  description: String!
+  lastUpdate: String!
+  title: String!
+}
+
+type CacheControlType {
+  cache: String!
+}
+
+type ContentType {
+  attributes: Attributes3Type!
+  groupId: String!
+  id: String!
+  type: String!
+}
+
+type DataType {
+  attributes: AttributesType!
+  id: String!
+  meta: MetaType!
+  type: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type IncludedType {
+  attributes: Attributes2Type!
+  id: String!
+  type: String!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type MetaType {
+  cacheControl: CacheControlType!
+}
+
+type Query {
+  """Obtiene balances energéticos dentro de un rango de fechas"""
+  energyBalancesByDateRange(
+    """Fecha de fin en formato ISO"""
+    endDate: DateTime!
+
+    """Fecha de inicio en formato ISO"""
+    startDate: DateTime!
+  ): ResponseType!
+
+  """Obtiene el último balance energético disponible"""
+  latestEnergyBalance: ResponseType!
+}
+
+"""Respuesta de datos energéticos"""
+type ResponseType {
+  """Datos principales de la respuesta"""
+  data: DataType!
+
+  """Elementos incluidos en la respuesta"""
+  included: [IncludedType!]!
+}
+
+type ValueType {
+  datetime: String!
+  percentage: Float!
+  value: Float!
+}

@@ -1,0 +1,25 @@
+{
+  "name": "fs-technical-test",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "start": "nest start",
+    "dev": "nest start --watch",
+    "debug": "nest start --debug --watch",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "docker:up": "docker-compose -f docker/docker-compose.dev.yml up --build",
+    "docker:down": "docker-compose -f docker/docker-compose.dev.yml down",
+    "dev:backend": "cd packages/backend && yarn dev",
+    "dev:frontend": "cd packages/frontend && yarn dev"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538"
+}
