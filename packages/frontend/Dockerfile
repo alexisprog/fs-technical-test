@@ -2,8 +2,11 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copiar archivos de proyecto
-COPY package*.json ./
+# Instalar dependencias esenciales para compilación
+RUN apk add --no-cache python3 make g++ bash git
+
+# Copiar archivos del proyecto
+COPY package.json ./
 
 # Instalar dependencias
 RUN yarn install

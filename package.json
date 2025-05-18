@@ -6,12 +6,17 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "docker-compose -f docker/docker-compose.dev.yml up",
-    "dev:backend": "yarn workspace backend dev",
-    "dev:frontend": "yarn workspace frontend dev",
-    "build": "yarn workspaces run build",
-    "build:backend": "yarn workspace backend build",
-    "build:frontend": "yarn workspace frontend build"
+    "prebuild": "rimraf dist",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "start": "nest start",
+    "dev": "nest start --watch",
+    "debug": "nest start --debug --watch",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "docker:up": "docker-compose -f docker/docker-compose.dev.yml up --build",
+    "docker:down": "docker-compose -f docker/docker-compose.dev.yml down",
+    "dev:backend": "cd packages/backend && yarn dev",
+    "dev:frontend": "cd packages/frontend && yarn dev"
   },
   "engines": {
     "node": ">=20.0.0"

@@ -63,9 +63,14 @@ corepack prepare yarn@4.9.1 --activate
 # Instalar dependencias
 yarn install
 
-# Iniciar todo el entorno de desarrollo
-yarn dev
+# Levantar los servicios (backend, frontend, mongodb)
+yarn docker:up
+
+# Para bajar los servicios
+yarn docker:down
 ```
+
+_Nota: El comando `yarn docker:up` construirá las imágenes si es necesario y se asegurará de que las dependencias estén instaladas dentro de los contenedores._
 
 ### Desarrollo Local (Sin Docker)
 
@@ -83,6 +88,27 @@ yarn dev:frontend
 ## Endpoints
 
 - **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:4000
-- **GraphQL Playground**: http://localhost:4000/graphql
+- **GraphQL Studio Sandbox**: http://localhost:4000/graphql
 - **MongoDB**: mongodb://localhost:27017/fs-technical-test
+
+## Pruebas (Backend)
+
+Para ejecutar las pruebas del backend, navega al directorio `packages/backend`.
+
+```bash
+cd packages/backend
+
+# Ejecutar todas las pruebas (unitarias y e2e)
+yarn test
+
+# Ejecutar solo pruebas unitarias
+yarn test:unit
+
+# Ejecutar solo pruebas e2e
+yarn test:e2e
+
+# Ejecutar pruebas con cobertura de código
+yarn test:cov
+```
+
+_Nota: Las pruebas e2e utilizan `mongodb-memory-server` y no requieren una instancia de MongoDB externa. Asegúrate de que el entorno esté limpio antes de ejecutarlas._
