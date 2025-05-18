@@ -492,3 +492,20 @@ query EnergyBalancesByDateRange($startDate: DateTime!, $endDate: DateTime!) {
   }
 }
 ```
+
+### Capturas del frontend:
+
+![image](https://github.com/user-attachments/assets/1d90566c-bf3a-4772-a2f4-42fa972e5859)
+
+![image](https://github.com/user-attachments/assets/3012c85e-17d0-4869-9dbc-53c3513454f2)
+
+![image](https://github.com/user-attachments/assets/c7a81017-cedd-49e2-aa13-7dee99f8713e)
+
+![image](https://github.com/user-attachments/assets/26c6137a-107d-448e-8f75-9c2ab14efc26)
+
+### Capturas del backend:
+
+![image](https://github.com/user-attachments/assets/7d55cbb1-120f-4d37-b697-d8b9a1e285a6)
+
+![image](https://github.com/user-attachments/assets/caf48aef-a9e2-47f3-868d-6160ce5b7fe6)
+
